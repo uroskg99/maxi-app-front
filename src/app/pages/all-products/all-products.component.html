@@ -1,8 +1,29 @@
-<div class="product" *ngFor="let products of productsList">
+<!-- <div class="product" *ngFor="let products of productsList">
     <p>Ime proizvoda je {{products.name}}</p>
     <p>Kategorija proizvoda je {{products.category}}</p>
     <p>Cena proizvoda je {{products.price}}</p>
 </div>
+<p>Trenutno ste na <strong>{{page}}.</strong> stranici</p>
+<button class="btn btn-success" (click)="previousPage()">Go back</button>
+<button class="btn btn-success m-2" (click)="nextPage()">Go next</button> -->
+<div class="row">
+    <!-- <div class="col-md-4">
+        <app-product-card></app-product-card>
+    </div>
+    <div class="col-md-4">
+        <app-product-card></app-product-card>
+    </div>
+    <div class="col-md-4">
+        <app-product-card></app-product-card>
+    </div>
+    <div class="col-md-4">
+        <app-product-card></app-product-card>
+    </div> -->
+    <div class="col-md-4" *ngFor="let product of productsList">
+        <app-product-card [product]="product"></app-product-card>
+    </div>
+</div>
+
 <p>Trenutno ste na <strong>{{page}}.</strong> stranici</p>
 <button class="btn btn-success" (click)="previousPage()">Go back</button>
 <button class="btn btn-success m-2" (click)="nextPage()">Go next</button>

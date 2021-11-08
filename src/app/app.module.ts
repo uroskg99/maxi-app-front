@@ -6,10 +6,11 @@ import { apiService } from './services/api.service';
 import { AllProductsComponent } from './pages/all-products/all-products.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HeaderComponent } from './components/header/header.component';
-import { AppRoutingModule } from './app-routing.module';
+//import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
 import { DrugaStranaComponent } from './pages/druga-strana/druga-strana.component';
 import { TrecaStranaComponent } from './pages/treca-strana/treca-strana.component';
+import { ProductCardComponent } from './components/product-card/product-card.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { TrecaStranaComponent } from './pages/treca-strana/treca-strana.componen
     AllProductsComponent,
     DrugaStranaComponent,
     TrecaStranaComponent,
+    ProductCardComponent,
   ],
   imports: [
     BrowserModule,

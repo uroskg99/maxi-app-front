@@ -1,0 +1,29 @@
+<div class="container page-wrapper">
+    <div class="page-inner">
+        <div class="el-wrapper">
+            <div class="box-up">
+                <img class="img" src="http://code.slicecrowd.com/labs/4/images/t-shirt.png" alt="">
+                <div class="img-info">
+                    <div class="info-inner">
+                        <span class="p-name">{{ product.name }}</span>
+                        <span class="p-category">{{ product.category }}</span>
+                    </div>
+                    <div class="a-size">The remaining amount : <span class="size">{{ product.quantity }}</span></div>
+                </div>
+            </div>
+
+            <div class="box-down">
+                <div class="h-bg">
+                    <div class="h-bg-inner"></div>
+                </div>
+
+                <a class="cart" href="#">
+                    <span class="price">{{ product.price }} RSD</span>
+                    <span class="add-to-cart">
+                        <span class="txt">Add in cart</span>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

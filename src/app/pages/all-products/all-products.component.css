@@ -1,3 +1,15 @@
-.product {
-  margin-bottom: 60px;
+.col-md-4 {
+  min-width: 393px;
+}
+
+@media (max-width: 1154px) {
+  .col-md-4 {
+    width: 50%;
+  }
+}
+
+@media (max-width: 770px) {
+  .col-md-4 {
+    width: 100%;
+  }
 }
