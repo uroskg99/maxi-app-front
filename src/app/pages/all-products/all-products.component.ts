@@ -36,14 +36,12 @@ export class AllProductsComponent implements OnInit {
       this.page = this.page - 1;
       this.getProductsApi(this.category, this.page);
     }
-    console.log(this.page);
   }
 
   nextPage() {
     if(this.page < this.lastPage) {
       this.page = this.page + 1;
       this.getProductsApi(this.category, this.page);
-      console.log(this.page);
     }
   }
 
