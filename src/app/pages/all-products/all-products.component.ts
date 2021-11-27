@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { apiService } from 'src/app/services/api.service';
 import { Products } from 'src/app/classes/Products';
+import { LoaderService } from 'src/app/loader/loader.service';
 
 @Component({
   selector: 'app-all-products',
@@ -9,7 +10,8 @@ import { Products } from 'src/app/classes/Products';
 })
 export class AllProductsComponent implements OnInit {
 
-  constructor(private _apiService: apiService) { }
+  constructor(private _apiService: apiService,
+    public loaderService: LoaderService) { }
 
   page: number = 1;
   category: string = "";
@@ -36,6 +38,7 @@ export class AllProductsComponent implements OnInit {
       this.page = this.page - 1;
       this.getProductsApi(this.category, this.page);
     }
+    document.body.scrollTop = document.documentElement.scrollTop = 0;
   }
 
   nextPage() {
@@ -43,6 +46,7 @@ export class AllProductsComponent implements OnInit {
       this.page = this.page + 1;
       this.getProductsApi(this.category, this.page);
     }
+    document.body.scrollTop = document.documentElement.scrollTop = 0;
   }
 
 }

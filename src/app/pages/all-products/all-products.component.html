@@ -6,19 +6,13 @@
 <p>Trenutno ste na <strong>{{page}}.</strong> stranici</p>
 <button class="btn btn-success" (click)="previousPage()">Go back</button>
 <button class="btn btn-success m-2" (click)="nextPage()">Go next</button> -->
+
+<div *ngIf="loaderService.isLoading | async" class="loader-container">
+    <!-- <mat-progress-bar mode="indeterminate"></mat-progress-bar> -->
+    <mat-spinner style="top: 50%; left: 50%"></mat-spinner>
+</div>
+
 <div class="row">
-    <!-- <div class="col-md-4">
-        <app-product-card></app-product-card>
-    </div>
-    <div class="col-md-4">
-        <app-product-card></app-product-card>
-    </div>
-    <div class="col-md-4">
-        <app-product-card></app-product-card>
-    </div>
-    <div class="col-md-4">
-        <app-product-card></app-product-card>
-    </div> -->
     <div class="col-md-4" *ngFor="let product of productsList">
         <app-product-card [product]="product"></app-product-card>
     </div>
