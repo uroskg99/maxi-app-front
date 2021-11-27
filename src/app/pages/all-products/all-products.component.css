@@ -15,13 +15,50 @@
   z-index: 100;
 }
 
-@media (max-width: 1154px) {
+.row {
+  width: 100%;
+}
+
+.pages {
+  display: flex;
+  justify-content: center;
+}
+
+.pages div {
+  margin-bottom: 45px;
+  margin-top: 30px;
+}
+
+.pages button {
+  min-width: 160px;
+  background-color: #D23725;
+  border: 2px solid #D23725;
+  color: white;
+  font-weight: bold;
+}
+
+.pages button:hover {
+  background-color: white;
+  color: #D23725;
+}
+
+.pages p {
+  text-align: center;
+  color: #D23725;
+  font-size: 20px;
+}
+
+.pages p strong {
+  color: black;
+}
+
+@media (max-width: 1195px) {
   .col-md-4 {
     width: 50%;
   }
 }
 
-@media (max-width: 770px) {
+@media (max-width: 802px) {
   .col-md-4 {
     width: 100%;
   }

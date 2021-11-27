@@ -1,14 +1,4 @@
-<!-- <div class="product" *ngFor="let products of productsList">
-    <p>Ime proizvoda je {{products.name}}</p>
-    <p>Kategorija proizvoda je {{products.category}}</p>
-    <p>Cena proizvoda je {{products.price}}</p>
-</div>
-<p>Trenutno ste na <strong>{{page}}.</strong> stranici</p>
-<button class="btn btn-success" (click)="previousPage()">Go back</button>
-<button class="btn btn-success m-2" (click)="nextPage()">Go next</button> -->
-
 <div *ngIf="loaderService.isLoading | async" class="loader-container">
-    <!-- <mat-progress-bar mode="indeterminate"></mat-progress-bar> -->
     <mat-spinner style="top: 50%; left: 50%"></mat-spinner>
 </div>
 
@@ -18,6 +8,10 @@
     </div>
 </div>
 
-<p>Trenutno ste na <strong>{{page}}.</strong> stranici</p>
-<button class="btn btn-success" (click)="previousPage()">Go back</button>
-<button class="btn btn-success m-2" (click)="nextPage()">Go next</button>
+<div class="pages">
+    <div>
+        <p>Stranica <strong>{{page}}</strong>/{{lastPage}} stranici</p>
+        <button class="btn" (click)="previousPage()" [disabled]="page == 1">Previous</button>
+        <button class="btn m-2" (click)="nextPage()" [disabled]="page == lastPage">Next</button>
+    </div>
+</div>
