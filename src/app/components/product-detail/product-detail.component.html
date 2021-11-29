@@ -1,0 +1,29 @@
+<div *ngIf="loaderService.isLoading | async" class="loader-container">
+    <mat-spinner style="top: 50%; left: 50%"></mat-spinner>
+</div>
+<div class="container" *ngIf='product'>
+    <div class="row">
+        <div class="col-md-5">
+            <img width="80%" height="80%"
+                     src="http://code.slicecrowd.com/labs/4/images/t-shirt.png"
+                     [title]='product.productName'>
+        </div>
+        <div class="col-md-7">
+            <p class="newarrival text-center"> NEW</p>
+            <h2>{{pageTitle + ' ' + product.name}}</h2>
+            <p> Sifra proizvoda: {{product._id}}</p>
+            <p class='price'>{{product.price}}RSD</p>
+            <p><b>Kategorija proizvoda: {{product.category}}</b></p>
+            <p><b>Preostala kolicina: {{product.quantity}}</b></p>
+            <label>Kolicina:  </label>
+            <input type='text' value='1'>
+            <button type="button" class="btn btn-default cart">Dodaj u korpu</button>
+            <br><br><br><br>
+            <button class='btn btn-outline-danger back'
+            style='width:80px'
+            (click)='onBack()'>
+            <i class='fa fa-chevron-left'></i> Nazad
+        </button>
+        </div>
+    </div>
+</div>

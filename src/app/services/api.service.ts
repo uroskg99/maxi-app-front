@@ -11,4 +11,8 @@ export class apiService{
     getProducts(cat:string="", page:number=1): Observable<Products[]> {
         return this.httpClient.get<Products[]>("http://localhost:8000/api/products/search?cat=" + cat + "&page=" + page);
     }
+
+    getProduct(id: string): Observable<Products> {
+        return this.httpClient.get<Products>("http://localhost:8000/api/products/" + id);
+    }
 }

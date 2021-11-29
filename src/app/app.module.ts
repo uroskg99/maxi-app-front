@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule} from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { apiService } from './services/api.service';
@@ -15,6 +15,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { InterceptorService } from './loader/interceptor.service';
+import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { InterceptorService } from './loader/interceptor.service';
     DrugaStranaComponent,
     TrecaStranaComponent,
     ProductCardComponent,
+    ProductDetailComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,6 +36,8 @@ import { InterceptorService } from './loader/interceptor.service';
       { path: '', component: AllProductsComponent },
       { path: 'druga-strana', component: DrugaStranaComponent },
       { path: 'treca-strana', component: TrecaStranaComponent },
+      { path: 'products', component: AllProductsComponent},
+      { path: 'products/:id', component: ProductDetailComponent}
     ]),
     BrowserAnimationsModule,
     MatProgressBarModule,
