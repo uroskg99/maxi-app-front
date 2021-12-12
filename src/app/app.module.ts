@@ -16,6 +16,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { InterceptorService } from './loader/interceptor.service';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
+import { HomeSliderComponent } from './components/home-slider/home-slider.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { ProductDetailComponent } from './components/product-detail/product-deta
     TrecaStranaComponent,
     ProductCardComponent,
     ProductDetailComponent,
+    HomeSliderComponent,
   ],
   imports: [
     BrowserModule,

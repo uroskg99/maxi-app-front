@@ -2,5 +2,5 @@
     height: 80px;
     background-color: #D23725;
     position: fixed;
-    z-index: 2;
+    z-index: 100;
 }
