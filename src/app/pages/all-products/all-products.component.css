@@ -1,5 +1,5 @@
 .row {
-  padding-top: 100px;
+  padding-top: 50px;
 }
 
 .col-md-4 {
@@ -31,20 +31,20 @@
 
 .pages button {
   min-width: 160px;
-  background-color: #D23725;
-  border: 2px solid #D23725;
+  background-color: #d23725;
+  border: 2px solid #d23725;
   color: white;
   font-weight: bold;
 }
 
 .pages button:hover {
   background-color: white;
-  color: #D23725;
+  color: #d23725;
 }
 
 .pages p {
   text-align: center;
-  color: #D23725;
+  color: #d23725;
   font-size: 20px;
 }
 
@@ -52,14 +52,29 @@
   color: black;
 }
 
-@media (max-width: 1195px) {
+.container-fluid {
+  padding-left: 0;
+  padding-top: 80px;
+}
+
+ol {
+  margin-bottom: 0.5rem;
+}
+
+.slider {
+  margin-top: 40px;
+}
+
+@media (max-width: 1210px) {
   .col-md-4 {
-    width: 50%;
+    max-width: 50%;
+    flex: 0 0 50%;
   }
 }
 
-@media (max-width: 802px) {
+@media (max-width: 823px) {
   .col-md-4 {
-    width: 100%;
+    max-width: 100%;
+    flex: 0 0 100%;
   }
 }
