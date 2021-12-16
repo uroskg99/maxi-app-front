@@ -2,7 +2,7 @@
     <div class="page-inner">
         <div class="el-wrapper">
             <div class="box-up">
-                <img class="img" src="http://code.slicecrowd.com/labs/4/images/t-shirt.png" alt="">
+                <img class="img" src="{{ product.picture }}" alt="">
                 <div class="img-info">
                     <div class="info-inner">
                         <a [routerLink]="['/products', product._id]">
@@ -20,7 +20,7 @@
                 </div>
 
                 <a class="cart" href="#">
-                    <span class="price">{{ product.price }} RSD</span>
+                    <span class="price">{{ product.price }}</span>
                     <span class="add-to-cart">
                         <span class="txt">Add in cart</span>
                     </span>
