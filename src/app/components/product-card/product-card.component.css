@@ -3,6 +3,11 @@ html {
   height: 100%;
 }
 
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
 .d-flex {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -112,7 +117,7 @@ body {
 }
 
 .el-wrapper .img {
-  padding: 20px 0;
+  padding: 50px 0;
   -webkit-transition: all 800ms cubic-bezier(0, 0, 0.18, 1);
   -moz-transition: all 800ms cubic-bezier(0, 0, 0.18, 1);
   -o-transition: all 800ms cubic-bezier(0, 0, 0.18, 1);
@@ -162,7 +167,7 @@ body {
   /* ease-out */
   position: absolute;
   width: 100%;
-  bottom: 25px;
+  bottom: 0;
 }
 
 .info-inner .p-name,

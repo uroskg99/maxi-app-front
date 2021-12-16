@@ -29,11 +29,13 @@ import { Component, OnInit } from '@angular/core';
       }
 
       /deep/ .carousel-control-next {
-        right: -115px;
+        right: -20px;
+        transform: translate(50%, 0);
       }
 
       /deep/ .carousel-control-prev {
-        left: -115px;
+        left: -20px;
+        transform: translate(-50%, 0);
       }
     `,
   ],
