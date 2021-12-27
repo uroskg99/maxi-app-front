@@ -3,10 +3,23 @@
     <mat-spinner style="top: 50%; left: 50%"></mat-spinner>
   </div>
 
-  <p>Ovde ce biti pretraga po kategoriji</p>
-
   <div class="container slider">
     <app-home-slider></app-home-slider>
+  </div>
+
+  <div class="d-flex justify-content-center filter">
+    <button [ngClass]="showFilters == true ? 'hovered-button' : 'not-hovered-button'" class="btn open-filters" (click)="toggleFilters()">Filteri <span>
+      <img src="../../assets/icons/sliders.svg" alt="">
+    </span></button>
+  </div>
+
+  <div *ngIf="showFilters" class="show-filters">
+    <div class="row justify-content-md-center">
+      <div *ngFor="let category of categories" class="col-sm-6">
+        <input type="checkbox" name="category.name" [checked]="category.checked" (change)="checkedCategory($event, category)" />
+        <label>{{ category.name }}</label>
+      </div>
+    </div>
   </div>
 
   <div class="row">

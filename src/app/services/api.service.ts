@@ -11,7 +11,7 @@ export class apiService{
     productsUrl: string = "http://localhost:8000/api/products/";
 
     getProducts(cat:string="", page:number=1): Observable<Products[]> {
-        return this.httpClient.get<Products[]>(this.productsUrl + "search?cat=" + cat + "&page=" + page);
+        return this.httpClient.get<Products[]>(this.productsUrl + "searchv2?cat=" + cat + "&page=" + page);
     }
 
     getProduct(id: string): Observable<Products> {
