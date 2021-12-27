@@ -10,7 +10,7 @@
                         </a>
                         <span class="p-category">{{ product.category }}</span>
                     </div>
-                    <div class="a-size">The remaining amount : <span class="size">{{ product.quantity }}</span></div>
+                    <div class="a-size">Preostala količina : <span class="size">{{ product.quantity }}</span></div>
                 </div>
             </div>
 
@@ -19,12 +19,20 @@
                     <div class="h-bg-inner"></div>
                 </div>
 
-                <a class="cart" href="#">
+                <a *ngIf="product.quantity > 0" class="cart" href="#">
                     <span class="price">{{ product.price }}</span>
                     <span class="add-to-cart">
-                        <span class="txt">Add in cart</span>
+                        <span class="txt">Dodaj u korpu</span>
                     </span>
                 </a>
+
+                <a *ngIf="product.quantity == 0" class="cart">
+                    <span class="price">{{ product.price }}</span>
+                    <span class="add-to-cart">
+                        <span class="not-available">Nedostupan</span>
+                    </span>
+                </a>
+
             </div>
         </div>
     </div>

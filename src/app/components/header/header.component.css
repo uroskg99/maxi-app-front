@@ -1,4 +1,18 @@
 .header {
     height: 80px;
     background-color: #D23725;
+    padding-top: 30px;
+}
+
+a {
+    color: white;
+    font-weight: 500;
+    margin-right: 40px;
+    font-size: 22px;
+    margin-top: 40px;
+}
+
+a:hover {
+    text-decoration: none;
+    color: white;
 }
