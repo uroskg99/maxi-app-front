@@ -3,15 +3,23 @@ import { apiService } from 'src/app/services/api.service';
 import { Products } from 'src/app/classes/Products';
 import { LoaderService } from 'src/app/loader/loader.service';
 
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
+import { AdminsService } from 'src/app/services/admins.service';
+
 @Component({
   selector: 'app-all-products',
   templateUrl: './all-products.component.html',
   styleUrls: ['./all-products.component.css'],
 })
 export class AllProductsComponent implements OnInit {
+
   constructor(
     private _apiService: apiService,
-    public loaderService: LoaderService
+    public loaderService: LoaderService,
+    private _adminsService: AdminsService,
+    private toastr: ToastrService,
+    private formBuilder: FormBuilder
   ) {}
 
   page: number = 1;
@@ -21,6 +29,11 @@ export class AllProductsComponent implements OnInit {
   lastPage: number = 0;
   selectedCategories: any[] = [];
   showFilters: boolean = false;
+
+  form: FormGroup;
+  submitted = false;
+  loginData: any;
+  token: any;
 
   categories = [
     {name: "Čokoladni proizvodi", checked: false, n:0},
@@ -33,14 +46,11 @@ export class AllProductsComponent implements OnInit {
 
   getProductsApi(category: string, page: number) {
     this._apiService.getProducts(category, page).subscribe((data: any) => {
+      //console.log(data);
       this.productsList = data.products;
       this.totalProducts = data.totalProducts;
       this.lastPage = data.lastPage;
     });
-  }
-
-  ngOnInit() {
-    this.getProductsApi(this.category, this.page);
   }
 
   getSelectedCategories() {
@@ -77,5 +87,9 @@ export class AllProductsComponent implements OnInit {
       this.getProductsApi(this.category, this.page);
     }
     document.body.scrollTop = document.documentElement.scrollTop = 0;
+  }
+
+  ngOnInit() {
+    this.getProductsApi(this.category, this.page);
   }
 }

@@ -122,6 +122,15 @@ ol {
   color: #252525;
 }
 
+.form-div {
+  margin-top: 60px;
+}
+
+.btn-login {
+  background-color: #D23725;
+  color: #fff;
+}
+
 @media (max-width: 1210px) {
   .col-md-4 {
     max-width: 50%;
