@@ -7,6 +7,56 @@
     <app-home-slider></app-home-slider>
   </div>
 
+  <!-- <div class="form-div container">
+    <form (ngSubmit)="onSubmit()" [formGroup]="form">
+      <div class="form-group">
+        <label for="exampleInputEmail1">Email</label>
+        <input
+          type="text"
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+          placeholder="Unesite email admina"
+          name="email"
+          formControlName="email"
+          [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
+        />
+        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+          <div *ngIf="f.email.errors.required">
+            Email je neophodan
+          </div>
+          <div *ngIf="f.email.errors.email">
+            Mora biti važeći email
+          </div>
+        </div>
+        <small id="emailHelp" class="form-text text-muted"
+          >Pažljivo rukujte i delite vaše admin podatke.</small
+        >
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Šifra</label>
+        <input
+          type="password"
+          class="form-control"
+          id="exampleInputPassword1"
+          placeholder="Unesite admin šifru"
+          name="password"
+          formControlName="password"
+          [ngClass]="{ 'is-invalid': submitted && f.password.errors }"
+        />
+        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+          <div *ngIf="f.password.errors.required">
+            Sifra je neophodna
+          </div>
+          <div *ngIf="f.password.errors.minlength">
+            Sifra mora imati najmanje 6 karaktera
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-login">Uloguj se kao admin</button>
+    </form>
+  </div> -->
+
   <div class="d-flex justify-content-center filter">
     <button [ngClass]="showFilters == true ? 'hovered-button' : 'not-hovered-button'" class="btn open-filters" (click)="toggleFilters()">Filteri <span>
       <img src="../../assets/icons/sliders.svg" alt="">
