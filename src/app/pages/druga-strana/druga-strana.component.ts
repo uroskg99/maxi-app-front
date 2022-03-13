@@ -33,6 +33,7 @@ export class DrugaStranaComponent implements OnInit {
 
   ngOnInit(): void {
     this.loginForm();
+    localStorage.removeItem('token');
   }
 
   get f() {

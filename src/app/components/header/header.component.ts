@@ -6,10 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  admin: any;
 
   constructor() { }
 
   ngOnInit(): void {
+    if(localStorage.getItem("token")) {
+      this.admin = true;
+    } else {
+      this.admin = false;
+    }
   }
 
 }

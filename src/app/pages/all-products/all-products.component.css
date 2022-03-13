@@ -131,6 +131,29 @@ ol {
   color: #fff;
 }
 
+.admin-panel {
+  position: relative;
+  height: 100px;
+}
+
+.admin-panel-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #D23725;
+  color: #fff;
+  border-radius: 7px;
+  border: 2px solid #fff;
+  height: 50px;
+}
+
+.admin-panel-button:hover {
+  background-color: #fff;
+  color: #D23725;
+  border: 2px solid #D23725;
+}
+
 @media (max-width: 1210px) {
   .col-md-4 {
     max-width: 50%;

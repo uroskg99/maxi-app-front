@@ -34,6 +34,7 @@ export class AllProductsComponent implements OnInit {
   submitted = false;
   loginData: any;
   token: any;
+  adminLogged: any;
 
   categories = [
     {name: "Čokoladni proizvodi", checked: false, n:0},
@@ -46,7 +47,6 @@ export class AllProductsComponent implements OnInit {
 
   getProductsApi(category: string, page: number) {
     this._apiService.getProducts(category, page).subscribe((data: any) => {
-      //console.log(data);
       this.productsList = data.products;
       this.totalProducts = data.totalProducts;
       this.lastPage = data.lastPage;
@@ -91,5 +91,8 @@ export class AllProductsComponent implements OnInit {
 
   ngOnInit() {
     this.getProductsApi(this.category, this.page);
+    if(localStorage.getItem('token') != null) {
+      this.adminLogged = true;
+    }
   }
 }

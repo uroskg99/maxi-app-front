@@ -44,7 +44,6 @@ import { AuthGuard } from './auth.guard';
       { path: 'admin-home', component: TrecaStranaComponent, canActivate: [AuthGuard] },
       { path: 'products', component: AllProductsComponent},
       { path: 'products/:id', component: ProductDetailComponent},
-      //iskoristiti canActivate za admin panel
     ]),
     BrowserAnimationsModule,
     MatProgressBarModule,
