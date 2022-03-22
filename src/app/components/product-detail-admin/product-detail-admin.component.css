@@ -1,0 +1,113 @@
+.newarrival {
+    background: red;
+    width: 50px;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.col-md-7 h2 {
+    color: #555;
+}
+
+.price {
+    color: #fe2b0f;
+    font-size: 26px;
+    font-weight: bold;
+    padding-top: 20px;
+}
+
+.cart {
+    background: #fe2b0f;
+    color: #ffffff;
+    font-size: 15px;
+    margin-left: 20px;
+}
+
+.col-md-4 {
+    min-width: 393px;
+  }
+  
+  @media (max-width: 1154px) {
+    .col-md-4 {
+      width: 50%;
+    }
+  }
+  
+  @media (max-width: 770px) {
+    .col-md-4 {
+      width: 100%;
+    }
+  }
+
+  .btn-form {
+    margin-right: 25px;
+  }
+  
+  .row {
+    padding-top: 100px;
+  }
+  
+  .loader-container {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.8;
+    z-index: 100;
+  }
+
+.login-info {
+    margin-top: 50px;
+}
+
+.register-form form {
+    margin-top: 40px;
+}
+
+.register-form {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,.5);
+}
+
+.register-form-body {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid #D23725;
+    border-radius: 10px;
+    width: 70%;
+    padding: 15px;
+    min-width: 400px;
+    max-width: 700px;
+    z-index: 10;
+    background-color: #fff;
+}
+
+.close-modal {
+    position: absolute;
+    right: 0;
+    margin-right: 20px;
+    outline: none;
+    border: none;
+    border-radius: 50%;
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    height: 30px;
+    width: 30px;
+    font-size: 20px;
+}
+
+.btn-register {
+  margin-top: 40px;
+  background-color: #D23725;
+  color: #fff;
+  height: 40px;
+  border: 2px solid #fff;
+}

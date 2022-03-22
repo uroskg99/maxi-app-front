@@ -19,6 +19,7 @@ import { ProductDetailComponent } from './components/product-detail/product-deta
 import { HomeSliderComponent } from './components/home-slider/home-slider.component';
 import { ToastrModule } from 'ngx-toastr';
 import { AuthGuard } from './auth.guard';
+import { ProductDetailAdminComponent } from './components/product-detail-admin/product-detail-admin.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { AuthGuard } from './auth.guard';
     ProductCardComponent,
     ProductDetailComponent,
     HomeSliderComponent,
+    ProductDetailAdminComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,6 +44,7 @@ import { AuthGuard } from './auth.guard';
       { path: '', component: AllProductsComponent },
       { path: 'admin-login', component: DrugaStranaComponent },
       { path: 'admin-home', component: TrecaStranaComponent, canActivate: [AuthGuard] },
+      { path: 'admin-home/:id', component: ProductDetailAdminComponent},
       { path: 'products', component: AllProductsComponent},
       { path: 'products/:id', component: ProductDetailComponent},
     ]),

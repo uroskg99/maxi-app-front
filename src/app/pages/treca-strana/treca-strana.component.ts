@@ -9,6 +9,8 @@ import { ToastrService } from 'ngx-toastr';
 
 import { Router } from '@angular/router';
 import jwt_decode from 'jwt-decode';
+import { Products } from 'src/app/classes/Products';
+import { apiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-treca-strana',
@@ -25,10 +27,17 @@ export class TrecaStranaComponent implements OnInit {
 
   showRegisterForm = false;
 
+  productsList: Products[];
+  imageWidth:number = 50;
+  imageMargin:number = 2;
+  showImage: boolean = false;
+
+
   constructor(
     private formBuilder: FormBuilder,
     private adminService: AdminsService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private _apiService: apiService
   ) {}
 
   createForm() {
@@ -49,6 +58,7 @@ export class TrecaStranaComponent implements OnInit {
     this.token = localStorage.getItem('token');
     this.loginData = jwt_decode(this.token);
     this.createForm();
+    this.getProductsApi();
   }
 
   get f() {
@@ -88,5 +98,16 @@ export class TrecaStranaComponent implements OnInit {
 
   closeModal() {
     this.showRegisterForm = false;
+  }
+
+  getProductsApi() {
+    this._apiService.getAdminProducts().subscribe((data: any) => {
+      this.productsList = data.products;
+      console.log(this.productsList);
+    });
+  }
+
+  toggleImage(): void {
+    this.showImage = !this.showImage;
   }
 }

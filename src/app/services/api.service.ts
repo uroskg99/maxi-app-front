@@ -17,4 +17,16 @@ export class apiService{
     getProduct(id: string): Observable<Products> {
         return this.httpClient.get<Products>(this.productsUrl + id);
     }
+
+    getAdminProducts(): Observable<Products[]> {
+        return this.httpClient.get<Products[]>(this.productsUrl + "getAllProducts");
+    }
+
+    updateProduct(data: any) {
+        return this.httpClient.post<any>(this.productsUrl + "updateProduct", data);
+    }
+
+    deleteProduct(data: any) {
+        return this.httpClient.post<any>(this.productsUrl + "deleteProduct", data);
+    }
 }
