@@ -19,6 +19,10 @@ import { ProductDetailComponent } from './components/product-detail/product-deta
 import { HomeSliderComponent } from './components/home-slider/home-slider.component';
 import { ToastrModule } from 'ngx-toastr';
 import { AuthGuard } from './auth.guard';
+import { AddProductComponent } from './components/add-product/add-product.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -31,6 +35,7 @@ import { AuthGuard } from './auth.guard';
     ProductCardComponent,
     ProductDetailComponent,
     HomeSliderComponent,
+    AddProductComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,6 +54,9 @@ import { AuthGuard } from './auth.guard';
     MatProgressBarModule,
     MatProgressSpinnerModule,
     ToastrModule.forRoot(),
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
   ],
   providers: [
     apiService,

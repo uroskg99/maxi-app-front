@@ -1,0 +1,60 @@
+.btn-add-product, .btn-add-product-second {
+    margin-top: 25px;
+    background-color: #D23725;
+    color: #fff;
+    width: 147.8px;
+    border: 2px solid #fff;
+}
+
+.btn-add-product:hover, .btn-add-product-second:hover {
+    background-color: #fff;
+    border: 2px solid #D23725;
+    color: #D23725;
+}
+
+.btn-add-product:focus, .btn-add-product-second {
+    box-shadow: none;
+}
+
+.add-product-form {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,.5);
+}
+
+.add-product-form-body form {
+    margin-top: 40px;
+}
+
+.add-product-form-body {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid #D23725;
+    border-radius: 10px;
+    width: 70%;
+    padding: 15px;
+    min-width: 400px;
+    max-width: 700px;
+    z-index: 10;
+    background-color: #fff;
+}
+
+.close-modal {
+    position: absolute;
+    right: 0;
+    margin-right: 20px;
+    outline: none;
+    border: none;
+    border-radius: 50%;
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    height: 30px;
+    width: 30px;
+    font-size: 20px;
+}
