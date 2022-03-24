@@ -23,6 +23,7 @@ import { AddProductComponent } from './components/add-product/add-product.compon
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
+import { ProductDetailAdminComponent } from './components/product-detail-admin/product-detail-admin.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { MatSelectModule } from '@angular/material/select';
     ProductDetailComponent,
     HomeSliderComponent,
     AddProductComponent,
+    ProductDetailAdminComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,6 +49,7 @@ import { MatSelectModule } from '@angular/material/select';
       { path: '', component: AllProductsComponent },
       { path: 'admin-login', component: DrugaStranaComponent },
       { path: 'admin-home', component: TrecaStranaComponent, canActivate: [AuthGuard] },
+      { path: 'admin-home/:id', component: ProductDetailAdminComponent},
       { path: 'products', component: AllProductsComponent},
       { path: 'products/:id', component: ProductDetailComponent},
     ]),

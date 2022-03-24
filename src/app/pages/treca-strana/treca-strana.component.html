@@ -13,14 +13,8 @@
       <form (ngSubmit)="registerAdmin()" [formGroup]="form">
         <div class="form-group">
           <label for="username">Korisničko ime</label>
-          <input
-            formControlName="username"
-            type="text"
-            class="form-control"
-            id="username"
-            placeholder="Unesi korisničko ime"
-            [ngClass]="{ 'is-invalid': submitted && f.username.errors }"
-          />
+          <input formControlName="username" type="text" class="form-control" id="username"
+            placeholder="Unesi korisničko ime" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
 
           <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
             <div *ngIf="f.username.errors.required">
@@ -30,14 +24,8 @@
         </div>
         <div class="form-group">
           <label for="email">Email adresa</label>
-          <input
-            formControlName="email"
-            type="email"
-            class="form-control"
-            id="email"
-            placeholder="Unesi email"
-            [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
-          />
+          <input formControlName="email" type="email" class="form-control" id="email" placeholder="Unesi email"
+            [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
 
           <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
             <div *ngIf="f.email.errors.email">Email adresa je neophodna</div>
@@ -49,14 +37,8 @@
         </div>
         <div class="form-group">
           <label for="password">Šifra</label>
-          <input
-            formControlName="password"
-            type="password"
-            class="form-control"
-            id="password"
-            placeholder="Unesi šifru"
-            [ngClass]="{ 'is-invalid': submitted && f.password.errors }"
-          />
+          <input formControlName="password" type="password" class="form-control" id="password" placeholder="Unesi šifru"
+            [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
 
           <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
             <div *ngIf="f.password.errors.required">Šifra je neophodna</div>
@@ -69,19 +51,10 @@
 
         <div class="form-group">
           <label for="password">Potvrdite šifru</label>
-          <input
-            formControlName="confirmPassword"
-            type="password"
-            class="form-control"
-            id="confirmPassword"
-            placeholder="Potvrdite unetu šifru"
-            [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }"
-          />
+          <input formControlName="confirmPassword" type="password" class="form-control" id="confirmPassword"
+            placeholder="Potvrdite unetu šifru" [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }" />
 
-          <div
-            *ngIf="submitted && f.confirmPassword.errors"
-            class="invalid-feedback"
-          >
+          <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
             <div *ngIf="f.confirmPassword.errors.required">
               Neophodno je potvrditi šifru
             </div>
@@ -99,4 +72,39 @@
 
 <div class="container add-product">
   <app-add-product></app-add-product>
+</div>
+
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>
+            <button class="btn btn-register" (click)="toggleImage()">
+              {{showImage ? "Sakrij" : "Prikazi"}} sliku proizvoda
+            </button>
+          </th>
+          <th>Proizvod</th>
+          <th>Kategorija</th>
+          <th>Cena</th>
+          <th>Kolicina</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor='let product of productsList'>
+          <td>
+            <img *ngIf="showImage" [src]='product.picture' [title]='product.name' [style.width.px]='imageWidth'
+              [style.margin.px]='imageMargin'>
+          </td>
+          <td>
+            <a [routerLink]="['/admin-home', product._id]">
+              {{product.name}}
+            </a>
+          </td>
+          <td>{{product.category}}</td>
+          <td>{{product.price}}</td>
+          <td>{{product.quantity}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
