@@ -19,6 +19,10 @@ import { ProductDetailComponent } from './components/product-detail/product-deta
 import { HomeSliderComponent } from './components/home-slider/home-slider.component';
 import { ToastrModule } from 'ngx-toastr';
 import { AuthGuard } from './auth.guard';
+import { AddProductComponent } from './components/add-product/add-product.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 import { ProductDetailAdminComponent } from './components/product-detail-admin/product-detail-admin.component';
 
 @NgModule({
@@ -32,6 +36,7 @@ import { ProductDetailAdminComponent } from './components/product-detail-admin/p
     ProductCardComponent,
     ProductDetailComponent,
     HomeSliderComponent,
+    AddProductComponent,
     ProductDetailAdminComponent,
   ],
   imports: [
@@ -52,6 +57,9 @@ import { ProductDetailAdminComponent } from './components/product-detail-admin/p
     MatProgressBarModule,
     MatProgressSpinnerModule,
     ToastrModule.forRoot(),
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
   ],
   providers: [
     apiService,
