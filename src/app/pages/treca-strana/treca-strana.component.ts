@@ -73,7 +73,7 @@ export class TrecaStranaComponent implements OnInit {
 
     this.adminService.registerAdmin(this.form.value).subscribe(res => {
       this.registerData = res;
-      console.log(res);
+      // console.log(res);
       if(this.registerData.status === 1) {
         this.toastr.success(JSON.stringify(this.registerData.message), JSON.stringify(this.registerData.code), {
           timeOut: 2000,
@@ -103,7 +103,6 @@ export class TrecaStranaComponent implements OnInit {
   getProductsApi() {
     this._apiService.getAdminProducts().subscribe((data: any) => {
       this.productsList = data.products;
-      console.log(this.productsList);
     });
   }
 

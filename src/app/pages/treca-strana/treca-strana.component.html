@@ -74,37 +74,36 @@
   <app-add-product></app-add-product>
 </div>
 
-  <div class="table-responsive">
-    <table class="table">
-      <thead>
-        <tr>
-          <th>
-            <button class="btn btn-register" (click)="toggleImage()">
-              {{showImage ? "Sakrij" : "Prikazi"}} sliku proizvoda
-            </button>
-          </th>
-          <th>Proizvod</th>
-          <th>Kategorija</th>
-          <th>Cena</th>
-          <th>Kolicina</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor='let product of productsList'>
-          <td>
-            <img *ngIf="showImage" [src]='product.picture' [title]='product.name' [style.width.px]='imageWidth'
-              [style.margin.px]='imageMargin'>
-          </td>
-          <td>
-            <a [routerLink]="['/admin-home', product._id]">
-              {{product.name}}
-            </a>
-          </td>
-          <td>{{product.category}}</td>
-          <td>{{product.price}}</td>
-          <td>{{product.quantity}}</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>
+          <button class="btn btn-register" (click)="toggleImage()">
+            {{showImage ? "Sakrij" : "Prikazi"}} sliku proizvoda
+          </button>
+        </th>
+        <th>Proizvod</th>
+        <th>Kategorija</th>
+        <th>Cena</th>
+        <th>Kolicina</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let product of productsList'>
+        <td>
+          <img *ngIf="showImage" [src]='product.picture' [title]='product.name' [style.width.px]='imageWidth'
+            [style.margin.px]='imageMargin'>
+        </td>
+        <td>
+          <a [routerLink]="['/admin-home', product._id]">
+            {{product.name}}
+          </a>
+        </td>
+        <td>{{product.category}}</td>
+        <td>{{product.price}}</td>
+        <td>{{product.quantity}}</td>
+      </tr>
+    </tbody>
+  </table>
 </div>

@@ -30,6 +30,5 @@ export class AddProductComponent implements OnInit {
   }
 
   addNewProduct() {
-    console.log('sss');
   }
 }

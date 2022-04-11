@@ -5,10 +5,12 @@ import { Routes, RouterModule } from '@angular/router';
 import { DrugaStranaComponent } from './pages/druga-strana/druga-strana.component';
 import { TrecaStranaComponent } from './pages/treca-strana/treca-strana.component';
 import { AllProductsComponent } from './pages/all-products/all-products.component';
+import { CartComponent } from './pages/cart/cart.component';
 
 const routes: Routes = [
   { path: '**', redirectTo: '/home' },
   { path: 'home', component: AllProductsComponent },
+  { path:'cart', component: CartComponent},
   { path: 'admin-login', component: DrugaStranaComponent },
   { path: 'admin-home', component: TrecaStranaComponent },
 ];

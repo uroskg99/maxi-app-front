@@ -21,9 +21,9 @@
 
                 <a *ngIf="product.quantity > 0" class="cart" href="#">
                     <span class="price">{{ product.price }}</span>
-                    <span class="add-to-cart">
+                    <button class="add-to-cart" (click)=addtocart(product)>
                         <span class="txt">Dodaj u korpu</span>
-                    </span>
+                    </button>
                 </a>
 
                 <a *ngIf="product.quantity == 0" class="cart">

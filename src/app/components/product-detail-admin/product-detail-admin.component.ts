@@ -62,7 +62,7 @@ export class ProductDetailAdminComponent implements OnInit {
       (data: any) => {
         this.product = data.product[0];
         this.selectedPicture = this.product.picture;
-        console.log(this.selectedPicture);
+        // console.log(this.selectedPicture);
     });
   }
 
@@ -72,7 +72,7 @@ export class ProductDetailAdminComponent implements OnInit {
 
   editProductForm(): void {
     this.showProductForm = true;
-    console.log(this.product.category)
+    // console.log(this.product.category)
   }
 
   closeEditForm(): void {
@@ -86,7 +86,7 @@ export class ProductDetailAdminComponent implements OnInit {
     if(this.formProduct.get('picture')?.value == null)
       this.formProduct.get('picture')?.setValue(this.selectedPicture);
 
-    console.log( this.formProduct.get('picture'));
+    // console.log( this.formProduct.get('picture'));
 
     this.submitted = true;
     if (this.formProduct.invalid) {
@@ -104,7 +104,7 @@ export class ProductDetailAdminComponent implements OnInit {
 
     this.apiService.updateProduct(data).subscribe((res : any) => {
       this.updateData = res;
-      console.log(res);
+      // console.log(res);
       if(this.updateData.status === 1) {
         this.toastr.success(JSON.stringify(this.updateData.message), JSON.stringify(this.updateData.code), {
           timeOut: 2000,
@@ -145,7 +145,7 @@ export class ProductDetailAdminComponent implements OnInit {
     this.apiService.deleteProduct(data).subscribe((res : any) => {
       alert()
       this.updateData = res;
-      console.log(res);
+      // console.log(res);
       if(this.updateData.status === 1) {
         this.toastr.success(JSON.stringify(this.updateData.message), JSON.stringify(this.updateData.code), {
           timeOut: 2000,

@@ -24,6 +24,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { ProductDetailAdminComponent } from './components/product-detail-admin/product-detail-admin.component';
+import { CartComponent } from './pages/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { ProductDetailAdminComponent } from './components/product-detail-admin/p
     HomeSliderComponent,
     AddProductComponent,
     ProductDetailAdminComponent,
+    CartComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,6 +54,7 @@ import { ProductDetailAdminComponent } from './components/product-detail-admin/p
       { path: 'admin-home/:id', component: ProductDetailAdminComponent},
       { path: 'products', component: AllProductsComponent},
       { path: 'products/:id', component: ProductDetailComponent},
+      { path: 'cart', component: CartComponent}
     ]),
     BrowserAnimationsModule,
     MatProgressBarModule,
