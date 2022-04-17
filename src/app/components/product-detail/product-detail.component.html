@@ -9,20 +9,17 @@
                      [title]='product.productName'>
         </div>
         <div class="col-md-7">
-            <p class="newarrival text-center"> NEW</p>
-            <h2>{{pageTitle + ' ' + product.name}}</h2>
-            <p> Sifra proizvoda: {{product._id}}</p>
-            <p class='price'>{{product.price}}RSD</p>
-            <p><b>Kategorija proizvoda: {{product.category}}</b></p>
-            <p><b>Preostala kolicina: {{product.quantity}}</b></p>
-            <label>Kolicina:  </label>
-            <input type='text' value='1'>
-            <button type="button" class="btn btn-default cart">Dodaj u korpu</button>
+            <p><b>{{product.category}}</b></p>
+            <p class="newarrival text-center"> NEW</p><br>
+            <h1>{{product.name}}</h1>
+            <span>{{'1 kom ' + product.price + '/kom'}}</span>
+            <p class='price'>{{product.price}}</p><br>
+            <button type="button" class="btn btn-default cart" (click)=addtocart(product)>Dodaj u korpu</button>
             <br><br><br><br>
             <button class='btn btn-outline-danger back'
-            style='width:80px'
+            style='width:50px'
             (click)='onBack()'>
-            <i class='fa fa-chevron-left'></i> Nazad
+            <i class='fa fa-chevron-left white-color'></i> 
         </button>
         </div>
     </div>

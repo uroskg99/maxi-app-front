@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Products } from 'src/app/classes/Products';
 import { apiService } from 'src/app/services/api.service';
 import { LoaderService } from 'src/app/loader/loader.service';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-product-detail',
@@ -16,6 +17,7 @@ export class ProductDetailComponent implements OnInit {
   productId: string = '';
 
   constructor(private route: ActivatedRoute,
+      private cartService : CartService,
       private apiService: apiService,
       private router: Router,
       public loaderService: LoaderService) { }
@@ -35,5 +37,9 @@ export class ProductDetailComponent implements OnInit {
 
   onBack(): void {
     this.router.navigate(['/products']);
+  }
+
+  addtocart(item: any){
+    this.cartService.addtoCart(item);
   }
 }
