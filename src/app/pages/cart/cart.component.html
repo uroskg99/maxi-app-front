@@ -32,7 +32,7 @@
                             <td colspan="4"></td>
                             <td><button (click)="emptycart()" class="btn btn-danger">Isprazni  korpu</button></td>
                             <td><button routerLink="/products" class="btn btn-primary">Nastavi kupovinu</button></td>
-                            <td><button class="btn btn-success">Račun</button></td>
+                            <td><button class="btn btn-success" (click)="finish()">Završi kupovinu</button></td>
                             <td><strong>Ukupno : {{grandTotal}}RSD</strong></td>
                         </tr>
                     </tbody>
@@ -42,7 +42,7 @@
     </div>
 </ng-container>
 
-<ng-container *ngIf="products.length == 0">
+<ng-container *ngIf="products.length == 0 and end == 0">
     <div class="container">
         <div class="card">
         </div>
@@ -50,6 +50,16 @@
             <img src="https://rukminim1.flixcart.com/www/800/800/promos/16/05/2019/d438a32e-765a-4d8b-b4a6-520b560971e8.png?q=90" alt="">
             <h1>Korpa je prazna!</h1>
             <button routerLink="/products" class="btn btn-primary">Započni kupovinu</button>
+        </div>
+    </div>
+</ng-container>
+
+<ng-container *ngIf="end == 1">
+    <div class="container">
+        <div class="end">
+            <br><br><br> <br><br><br>
+            <h2>Kupovina je uspešno obavljena, pošiljka je na putu do Vas!</h2>
+            <button routerLink="/products" (click)="emptycart()" class="btn btn-primary">Započni novu kupovinu</button>
         </div>
     </div>
 </ng-container>

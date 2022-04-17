@@ -10,7 +10,6 @@
                         </a>
                         <span class="p-category">{{ product.category }}</span>
                     </div>
-                    <div class="a-size">Preostala količina : <span class="size">{{ product.quantity }}</span></div>
                 </div>
             </div>
 
@@ -21,9 +20,7 @@
 
                 <a *ngIf="product.quantity > 0" class="cart" href="#">
                     <span class="price">{{ product.price }}</span>
-                    <button class="add-to-cart" (click)=addtocart(product)>
-                        <span class="txt">Dodaj u korpu</span>
-                    </button>
+                    <span class="add-to-cart btn" (click)=addtocart(product)>Dodaj u korpu</span>
                 </a>
 
                 <a *ngIf="product.quantity == 0" class="cart">
